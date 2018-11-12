@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sitter_id: 1
+  pet_id: 1
+  days_sat: 1
+  total_cost: 1
+
+two:
+  sitter_id: 1
+  pet_id: 1
+  days_sat: 1
+  total_cost: 1
