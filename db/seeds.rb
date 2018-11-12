@@ -17,20 +17,24 @@ Owner.delete_all
 end
 
 Pet.delete_all
-30.times do ### Cat
-  Pet.create(name: Faker::Cat.name, species: "cat", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/cat", owner_id: owner_ids.sample )
+i = 1
+20.times do ### Cat
+  Pet.create(name: Faker::Cat.name, species: "cat", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "/Users/setinwonderland/Development/Mod3Final/Petcation/app/assets/images/cat#{i}.jpg", owner_id: owner_ids.sample )
+i += 1
 end
 
-30.times do ### Dog
-  Pet.create(name: Faker::Dog.name, species: "dog", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/dog", owner_id: owner_ids.sample )
+i = 1
+20.times do ### Dog
+  Pet.create(name: Faker::Dog.name, species: "dog", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "/Users/setinwonderland/Development/Mod3Final/Petcation/app/assets/images/dog#{i}.jpg", owner_id: owner_ids.sample )
+i += 1
 end
 
 
 
 Sitter.delete_all
 i = 1
-30.times do
-  Sitter.create(name: Faker::Name.name, email: Faker::Internet.free_email , location: Faker::Address.city, rate: "#{rates.sample}", photo_url: "https://loremflickr.com/320/240/person?random=#{i}", capacity: capacity.sample)
+20.times do
+  Sitter.create(name: Faker::Name.name, email: Faker::Internet.free_email , location: Faker::Address.city, rate: "#{rates.sample}", photo_url: "/Users/setinwonderland/Development/Mod3Final/Petcation/app/assets/images/sit#{i}.jpeg", capacity: capacity.sample)
 i+= 1
 end
 
