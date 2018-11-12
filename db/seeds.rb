@@ -1,7 +1,39 @@
-Owner.create(name: "Frida", email: "dfksdjf@flatiron.com", location: "New York, NY")
+temperaments = ["friendly", "shy", "not friendly", "great with kids", "energetic", "lazy"]
+ages = (1..20).to_a
+size = ["small", "medium", "large", "xl"]
+owner_ids = (1..30).to_a
+sitter_ids = (1..30).to_a
+pet_ids = (1..60).to_a
+rates = (25..400).to_a
+cost = (25..5000).to_a
+capacity = (1..15).to_a
+years = (2015..2018).to_a
+months = (1..12).to_a
+days = (1..28).to_a
 
-Pet.create(name: "Fido", species: "dog", temperament: "friendly", age: 2, size: "large", photo_url: "https://img.huffingtonpost.com/asset/5b7fdeab1900001d035028dc.jpeg?cache=sixpwrbb1s&ops=1910_1000", owner_id: 1)
+Owner.delete_all
+30.times do
+  Owner.create(name: Faker::Name.name, email: Faker::Internet.free_email, location: Faker::Address.city)
+end
 
-Sitter.create(name: "Asaf", email: "asaf@gmail.com", location: "New Jersey", rate: "$50", photo_url: "https://cdn20.patchcdn.com/users/93127/20180305/023857/styles/T800x600/public/processed_images/img_3632-1520278723-2647.jpg", capacity: 3)
+Pet.delete_all
+30.times do ### Cat
+  Pet.create(name: Faker::Cat.name, species: "cat", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/cat", owner_id: owner_ids.sample )
+end
 
-Transaction.create(sitter_id: 1, pet_id: 1, days_sat: 3, total_cost: 250, start_date: "01/02/03", end_date: "03/03/07")
+30.times do ### Cat
+  Pet.create(name: Faker::Dog.name, species: "dog", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/cat", owner_id: owner_ids.sample )
+end
+
+
+
+Sitter.delete_all
+30.times do
+  Sitter.create(name: Faker::Name.name, email: Faker::Internet.free_email , location: Faker::Address.city, rate: "#{rates.sample}", photo_url: "https://loremflickr.com/320/240/person", capacity: capacity.sample)
+end
+
+
+Transaction.delete_all
+60.times do
+  Transaction.create(sitter_id: sitter_ids.sample, pet_id: pet_ids.sample, days_sat: ages.sample, total_cost: cost.sample, start_date: "#{years.sample}/#{months.sample}/#{days.sample}", end_date: "2018/#{months.sample}/#{days.sample}")
+end
