@@ -18,18 +18,20 @@ end
 
 Pet.delete_all
 30.times do ### Cat
-  Pet.create(name: Faker::Cat.name, species: "cat", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/cat", owner_id: owner_ids.sample )
+  Pet.create(name: Faker::Cat.name, species: "cat", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "http://google.com", owner_id: owner_ids.sample )
 end
 
-30.times do ### Cat
-  Pet.create(name: Faker::Dog.name, species: "dog", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/cat", owner_id: owner_ids.sample )
+30.times do ### Dog
+  Pet.create(name: Faker::Dog.name, species: "dog", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "http://google.com", owner_id: owner_ids.sample )
 end
 
 
 
 Sitter.delete_all
+i = 1
 30.times do
-  Sitter.create(name: Faker::Name.name, email: Faker::Internet.free_email , location: Faker::Address.city, rate: "#{rates.sample}", photo_url: "https://loremflickr.com/320/240/person", capacity: capacity.sample)
+  Sitter.create(name: Faker::Name.name, email: Faker::Internet.free_email , location: Faker::Address.city, rate: "#{rates.sample}", photo_url: "https://loremflickr.com/320/240/person?random=#{i}", capacity: capacity.sample)
+i+= 1
 end
 
 

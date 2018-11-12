@@ -33,7 +33,7 @@ class Api::V1::PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :age, :temperament, :photo_url, :size, :owner_id)
+    params.require(:pet).permit(:name, :species, :temperament, :age, :size, :photo_url, :owner_id)
   end
 
   def find_pet
