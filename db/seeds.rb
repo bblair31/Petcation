@@ -18,11 +18,11 @@ end
 
 Pet.delete_all
 30.times do ### Cat
-  Pet.create(name: Faker::Cat.name, species: "cat", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "http://google.com", owner_id: owner_ids.sample )
+  Pet.create(name: Faker::Cat.name, species: "cat", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/cat", owner_id: owner_ids.sample )
 end
 
 30.times do ### Dog
-  Pet.create(name: Faker::Dog.name, species: "dog", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "http://google.com", owner_id: owner_ids.sample )
+  Pet.create(name: Faker::Dog.name, species: "dog", temperament: temperaments.sample, age: ages.sample, size: size.sample, photo_url: "https://loremflickr.com/320/240/dog", owner_id: owner_ids.sample )
 end
 
 
