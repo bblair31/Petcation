@@ -11,7 +11,10 @@ class Api::V1::OwnersController < ApplicationController
   end
 
   def create
-    @owner = Owner.create(owner_params)
+    @owner = Owner.where(:email => owner_params[:email]).first_or_create do |owner|
+      owner.name = owner_params[:name]
+      owner.location = owner_params[:location]
+    end
     render json: @owner, status: :created
   end
 
