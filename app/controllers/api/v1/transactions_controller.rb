@@ -11,10 +11,8 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def create
-    byebug
     @transaction = Transaction.create(transaction_params)
     render json: @transaction, status: :created
-    byebug
   end
 
   def update
