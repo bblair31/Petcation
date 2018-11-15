@@ -1,5 +1,5 @@
 class Api::V1::TransactionsController < ApplicationController
-  before_action :find_transaction, only: [:show, :update, :delete]
+  before_action :find_transaction, only: [:show, :update, :destroy]
 
   def index
     @transactions = Transaction.all
@@ -25,7 +25,7 @@ class Api::V1::TransactionsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @transaction.destroy
   end
 

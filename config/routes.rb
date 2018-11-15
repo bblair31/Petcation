@@ -4,8 +4,7 @@ Rails.application.routes.draw do
       resources :sitters, only: [:index, :show]
       resources :owners, only: [:index, :create, :update, :delete]
       resources :pets, only: [:index, :create, :update, :delete]
-      resources :transactions, only: [:index, :create, :update, :delete]
+      resources :transactions
     end
   end
 end
- 
