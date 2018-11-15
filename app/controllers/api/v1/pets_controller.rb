@@ -1,5 +1,5 @@
 class Api::V1::PetsController < ApplicationController
-  before_action :find_pet, only: [:show, :update, :delete]
+  before_action :find_pet, only: [:show, :update, :destroy]
 
   def index
     @pets = Pet.all
@@ -25,7 +25,7 @@ class Api::V1::PetsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @pet.destroy
   end
 
