@@ -1,24 +1,8 @@
-# README
+# PETCATION
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Flatiron School student project.
+Petcation is a pet-sitting pet-boarding app, where you can browse sitters and add photos of your pets.
 
-Things you may want to cover:
+Setup Instructions
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+run bundle and rails s -p 4000 to start up server.
